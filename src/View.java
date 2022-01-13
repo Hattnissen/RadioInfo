@@ -1,22 +1,29 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class View {
+    private static final long serialVersionUID = 1L;
+
+    private JMenuItem p1, p2, p3;
+    private String[] columnNames = {"Program", "Starttid", "Sluttid"};
+    private JFrame frame;
+    private JMenuBar menuBar;
+    private JMenu tables;
 
     public View() {
         initView();
     }
 
     public void initView() {
-        JFrame frame = new JFrame("Radio Info");
+        frame = new JFrame("Radio Info");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(true);
 
-        JMenuBar menuBar = new JMenuBar();
-        JMenu tables = new JMenu("Tablåer");
+        menuBar = new JMenuBar();
+        tables = new JMenu("Tablåer");
         menuBar.add(tables);
 
-        JMenuItem p1, p2, p3;
         p1 = new JMenuItem("P1");
         tables.add(p1);
         p2 = new JMenuItem("P2");
@@ -28,5 +35,24 @@ public class View {
         frame.setSize(800, 800);
         frame.setMinimumSize(new Dimension(800, 800));
         frame.setVisible(true);
+    }
+
+    public void makeTable(String[][] data, String[] columnNames) {
+        JTable table = new JTable(data, columnNames);
+        table.setBounds(30, 40, 200, 300);
+        JScrollPane sp = new JScrollPane(table);
+        frame.add(sp);
+    }
+
+    public void setActionListenerP1(ActionListener actionListener) {
+        p1.addActionListener(actionListener);
+    }
+
+    public void setActionListenerP2(ActionListener actionListener) {
+        p2.addActionListener(actionListener);
+    }
+
+    public void setActionListenerP3(ActionListener actionListener) {
+        p3.addActionListener(actionListener);
     }
 }
