@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ed694ac-073c-4062-8ffd-9d2310f6dfb1" name="Default Changelist" comment="Controller, Model and View created (testing git repository)">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+    <list default="true" id="6ed694ac-073c-4062-8ffd-9d2310f6dfb1" name="Default Changelist" comment="Kan nu skapa en tvådimensionell sträng array som innehåller programnamn, starttid och sluttid för en kanals tablå.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RadioInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RadioInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XMLParser.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyUnitTester" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Main/Main.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -125,7 +123,13 @@
       <option name="project" value="LOCAL" />
       <updated>1641206002644</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Kan nu skapa en tvådimensionell sträng array som innehåller programnamn, starttid och sluttid för en kanals tablå.">
+      <created>1642088560884</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1642088560884</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -169,10 +173,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Controller, Model and View created (testing git repository)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Controller, Model and View created (testing git repository)" />
+    <MESSAGE value="Kan nu skapa en tvådimensionell sträng array som innehåller programnamn, starttid och sluttid för en kanals tablå." />
+    <option name="LAST_COMMIT_MESSAGE" value="Kan nu skapa en tvådimensionell sträng array som innehåller programnamn, starttid och sluttid för en kanals tablå." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/View.java">

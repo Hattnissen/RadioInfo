@@ -5,7 +5,6 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -18,11 +17,10 @@ import java.util.ArrayList;
  */
 public class Model {
     String urlString = "http://api.sr.se/api/v2/channels?pagination=false";
-    String idP1 = "132";
     Document document;
 
     public Model() {
-        this.document = buildDocument(urlString);
+        this.document = buildDocument(urlString); //Document for all channels on SR
     }
 
     /**
@@ -46,12 +44,10 @@ public class Model {
         return document;
     }
 
-    //Kod för att ta fram en url till en kanals tablå givet kanalens id
-
     /**
      * "getTableURL"
      * Looks up a schedule URL given an id and a parsed XML document
-     * that can be used to get a table for programs on SR.
+     * that can be used to get a table for programs on Sveriges Radio.
      *
      * @param id
      * @param document
@@ -64,7 +60,7 @@ public class Model {
             Node channel = channels.item(i);
             if (channel.getNodeType() == Node.ELEMENT_NODE) {
                 Element elementChannel = (Element) channel;
-                if (elementChannel.getAttributeNode("id").getValue().equals(idP1)) {
+                if (elementChannel.getAttributeNode("id").getValue().equals(id)) {
                     NodeList scheduleURLList = elementChannel.getElementsByTagName("scheduleurl");
                     Node scheduleURLNode = scheduleURLList.item(0);
                     url = scheduleURLNode.getTextContent();
@@ -74,16 +70,23 @@ public class Model {
         return url;
     }
 
+    /**
+     * "getScheduleData"
+     * Parses an XML document with the given URL and then builds a String[][]
+     * with a channels schedule from Sveriges Radio.
+     * @param scheduleURL
+     * @return
+     */
     public String[][] getScheduleData(String scheduleURL) {
-        String[][] data = new String[100][3];
         Document document = buildDocument(scheduleURL);
         NodeList episodes = document.getElementsByTagName("scheduledepisode");
+        String[][] data = new String[episodes.getLength()][3];
         for (int i = 0; i < episodes.getLength(); i++) {
             ArrayList<String> programInfo = new ArrayList<>();
             Node episode = episodes.item(i);
             if (episode.getNodeType() == Node.ELEMENT_NODE) {
                 Element elementEpisode = (Element) episode;
-                String programName = getElementAttributeString(elementEpisode, "program", "name");
+                String programName = getElementString(elementEpisode, "title");
                 System.out.println(programName);
                 programInfo.add(programName);
                 String startTime = getElementString(elementEpisode, "starttimeutc");
@@ -121,4 +124,8 @@ public class Model {
         }
         return elementAttributeString;
     }
+
+//    public Object hoursBeforeAndAfter(int hours) {
+
+  //  }
 }

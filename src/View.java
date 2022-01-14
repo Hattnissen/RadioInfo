@@ -5,13 +5,14 @@ import java.awt.event.ActionListener;
 public class View {
     private static final long serialVersionUID = 1L;
 
+    public final String[] columnNames;
     private JMenuItem p1, p2, p3;
-    private String[] columnNames = {"Program", "Starttid", "Sluttid"};
     private JFrame frame;
     private JMenuBar menuBar;
     private JMenu tables;
 
     public View() {
+        this.columnNames = new String[] {"Program", "Starttid", "Sluttid"};
         initView();
     }
 
@@ -42,6 +43,7 @@ public class View {
         table.setBounds(30, 40, 200, 300);
         JScrollPane sp = new JScrollPane(table);
         frame.add(sp);
+        frame.setVisible(true);
     }
 
     public void setActionListenerP1(ActionListener actionListener) {
